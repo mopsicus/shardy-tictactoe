@@ -35,7 +35,9 @@
     "server",
     "socket",
     "backend",
-    "example"
+    "example",
+    "typescript",
+    "nodejs"    
   ],
   "bugs": {
     "url": "https://github.com/mopsicus/shardy-tictactoe/issues"

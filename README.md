@@ -8,7 +8,7 @@
     </picture>
 </p>
 <h3 align="center">Tic-Tac-Toe game on Shardy</h3>
-<h4 align="center">Framework for games and apps</h4>
+<h4 align="center">Framework for online games and apps</h4>
 <p align="center">
     <a href="https://github.com/mopsicus/shardy">Shardy</a> · <a href="https://github.com/mopsicus/shardy-template">Template</a> · <a href="https://github.com/mopsicus/shardy-unity">Unity client</a> · <a href="https://github.com/mopsicus/shardy-tictactoe/issues">Report Bug</a>
 </p>
