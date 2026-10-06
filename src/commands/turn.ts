@@ -5,7 +5,7 @@ import { T3Service } from '../T3Service';
  * Make turn
  */
 export const turn = (commander: Commander, payload: PayloadData, service: T3Service) => {
-  const data = JSON.parse(payload.data.toString());
+  const data = JSON.parse(String(payload.data));
   service.makeTurn(data.g, data.p, data.x, data.y);
   commander.response(payload);
 };

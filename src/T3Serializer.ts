@@ -22,6 +22,8 @@ export class T3Serializer implements Serializer {
    */
   decode(body: Buffer): PayloadData {
     const json = JSON.parse(body.toString());
-    return { type: json.type, name: json.name, id: json.id, error: json.error, data: json.data };
+    var d = { type: json.type, name: json.name, id: json.id, error: json.error, data: json.data } as PayloadData;
+    console.log(d);
+    return d;
   }
 }

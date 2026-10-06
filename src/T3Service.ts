@@ -76,8 +76,8 @@ export class T3Service implements Service {
    * @param {Client} client Client instance
    */
   async onConnect(client: Client): Promise<void> {
-    this.log.info(`client ${client.id} connected`, LoggerScope.System);
-    this.users.set(client.id, client);
+    this.log.info(`client ${client.connectionId} connected`, LoggerScope.System);
+    this.users.set(client.connectionId, client);
   }
 
   /**
@@ -86,7 +86,7 @@ export class T3Service implements Service {
    * @param {Client} client Client instance
    */
   async onReady(client: Client): Promise<void> {
-    this.log.info(`client ${client.id} ready`, LoggerScope.System);
+    this.log.info(`client ${client.connectionId} ready`, LoggerScope.System);
   }
 
   /**
@@ -95,9 +95,9 @@ export class T3Service implements Service {
    * @param {Client} client
    */
   async onDisconnect(client: Client): Promise<void> {
-    this.log.info(`client ${client.id} disconnected`, LoggerScope.System);
-    this.users.delete(client.id);
-    this.stopSearch(client.id);
+    this.log.info(`client ${client.connectionId} disconnected`, LoggerScope.System);
+    this.users.delete(client.connectionId);
+    this.stopSearch(client.connectionId);
   }
 
   /**
@@ -183,7 +183,7 @@ export class T3Service implements Service {
       if (players.length == MAX_PLAYERS_COUNT) {
         this.log.info(`players matched: ${players}`);
         players.forEach((item) => {
-          this.stopSearch(item.id);
+          this.stopSearch(item.connectionId);
           item.command('play');
         });
         const game = new Game(players);
